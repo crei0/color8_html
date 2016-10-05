@@ -1,0 +1,342 @@
+/* 
+
+	color8
+		
+		Versão Portuguesa 1.1
+		29-05-2011
+		
+        Criado por
+            André Guedes
+            http://andreguedes.pt/
+            guedes.andre@gmail.com
+
+		Licença
+			Atribuição - Uso Não Comercial - Partilha nos Mesmos Termos 3.0 Não Adaptada (CC BY-NC-SA 3.0) 
+            http://creativecommons.org/licenses/by-nc-sa/3.0/deed.pt
+                
+				Tem o direito de:
+					Partilhar — copiar, distribuir e transmitir a obra
+					Remisturar — adaptar a obra
+				
+				De acordo com as seguintes condições:
+                	Atribuição — Tem de fazer a atribuição da obra, da maneira estabelecida pelo autor ou licenciante 
+					(mas sem sugerir que este o apoia, ou que subscreve o seu uso da obra).
+					
+					Uso Não Comercial — Não pode usar esta obra para fins comerciais.
+					
+					Partilha nos Mesmos Termos — Se alterar, transformar, ou adaptar esta obra, ou se a utilizar noutras obras, 
+					só pode distribuir a obra resultante licenciando-a com a mesma licença ou com uma licença semelhante a esta.
+						
+*/
+
+body {
+	font-family: 'Ubuntu', Verdana, sans-serif;
+	color: #fff;
+	font-size: smaller;
+	margin: 0; }
+
+a {
+	color: #fff;
+	text-decoration: none; }
+a:hover, button:hover { cursor: pointer !important; }
+a img { border: none; }
+
+button {
+	background: url(imagens/button.png) 0 26px no-repeat;
+	height: 26px;
+	width: 26px;
+	border: none;
+	padding: 0;
+	margin: 0; }
+	button:hover { background-position: 0 0; }
+	button:active { background-position: 0 -26px; }
+button.window {
+	float: right !important;
+	margin: 2px -1px 0 0; }
+
+sup, sub {
+	font-family: monospace;
+	font-size: 10px; }
+abbr { cursor: help; }
+
+input {
+	display: block;
+	float: left;
+	background: #333 url(imagens/input.png) no-repeat;
+	color: #fff;
+	padding: 2px 2px 3px 5px;
+	margin: 1px 0 10px 0;
+	border: none;
+	width: 80px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif; }
+input:hover { background-color: #555; }
+input:focus { background-color: #999 !important; }
+div.input_box button {
+	margin: -19px 0 0 40px;
+	width: 40px !important;
+	position: absolute;
+	display: block;
+	display: none; }
+div.input_box:hover button { display: block; }
+div.input_box:hover input { background-color: #999; }
+div.input_box button {
+	float: left;
+	background: url(imagens/copy-black.png) right 0 no-repeat;
+	height: 20px;
+	width: 20px;
+	overflow: hidden; }
+div.input_box button:hover{ background-position: right bottom; }
+
+.container {
+	background: url(imagens/app_background.png) no-repeat;
+	overflow: hidden;
+	cursor: default;
+	width: 325px;
+	height: 374px;
+	padding: 20px 0 0 20px; }
+#info_container p {
+	color: #ddd;
+	width: 300px;
+	text-align: center;
+	margin: 0 0 10px 0;
+	padding: 0 -20px 0 -20px; }
+#info_container strong {
+	display: block;
+	text-transform: uppercase;
+	font-size: smaller;
+	font-weight: normal;
+	letter-spacing: 1px;
+	color: #999; }
+a.underlined { border-bottom: 1px solid #555; }
+a.underlined:hover { color: #ccc; }
+
+.top {
+	width: 293px;
+	height: 40px;
+	background: url(imagens/color8.png) center 8px no-repeat;
+	margin: -2px 0 0 0; }
+.top button {
+	float: left;	
+	text-decoration: none; }
+
+#show_rgb, #show_hsb {
+	height: 28px;
+	background: url(imagens/rgb-hsb.png) left -50px no-repeat;
+	width: 50px; }
+#show_hsb { background-position: right -50px; }
+#show_rgb.selected { background-position: left -76px !important;  }
+#show_hsb.selected { background-position: right -76px !important;  }
+#show_rgb:hover { background-position: left -102px; }
+#show_hsb:hover { background-position: right -102px; }
+
+#random {
+	margin: 174px 0 0 174px;
+	height: 24px;
+	width: 24px;
+	float: left;
+	background: url(imagens/random.png) 0 0 no-repeat; }
+#random:hover { background-position: 0 -24px; }
+
+#rgb_sliders, #hsb_sliders {
+	float: left;
+	width: 300px;
+	height: 84px; }
+
+.slider_box {
+	float: left;
+	margin: 4px 0 0 0; }
+.slider {
+	float: left;
+	background: url(imagens/grad-black.png) repeat-y;
+	cursor: move;
+	height: 21px;
+	width: 256px; }
+	
+.knob {
+	height: 15px;
+	width: 13px;
+	position: relative;
+	z-index: 100;
+	margin: 6px 0 0 0;
+	background: url(imagens/knob.png) 0 0 no-repeat; }
+div.knob:hover { background-position: -13px 0; }
+div.knob, div.knob:hover, div.knob:focus { cursor: move; }
+
+.stats {
+	float: left;
+	margin: -6px 0 0 0;
+	padding: 2px 0 0 8px;
+	text-align: right;
+	font-size: smaller;
+	width: 32px;
+	overflow: visible;
+	color: #fff;
+	background: url(imagens/stats.png) no-repeat; }
+#stats_red, #slider_red { background-color: #f00; }
+#stats_green, #slider_green { background-color: #0f0; }
+#stats_blue, #slider_blue { background-color: #00f; }
+
+#stats_hue, #stats_saturation { background-color: #f00; }
+#slider_hue { background: #f00 url(imagens/grad-hue.png) no-repeat; }
+
+#slider_saturation { background: #f00 url(imagens/grad-white.png); }
+#stats_brightness, #slider_brightness { background-color: #f00; }
+
+.boxes {
+	background: url(imagens/color_corners.png) no-repeat;
+	width: 206px;
+	height: 206px;
+	float: left;
+	margin: 0 0 0 0;
+	color: #777; }
+	
+/* mootools tooltips (not enabled for now) */	
+abbr.tooltip {
+	margin: 0;
+	padding: 0; }
+.custom-tip {
+	color: #000;
+	width: 192px;
+	z-index: 13000; }
+.custom-title {
+	font-weight: bold;
+	font-size: small;
+	height: 18px;
+	color: #ccc;
+	padding: 4px 8px 0px 24px;
+	background: url(imagens/tooltip.png) 0 0 no-repeat; }
+.custom-text {
+	padding: 0px 8px 8px 8px;
+	font-size: x-small;
+	min-height: 49px;
+	color: #fff;
+	background: url(imagens/tooltip.png) 0 bottom no-repeat; }
+
+.turn {
+	position: absolute;
+	top: 342px;
+	left: 308px; }
+
+a#made_by {
+	float: left;
+	width: 120px;
+	height: 108px;
+	margin: 38px 0 0 87px;
+	background: url(imagens/suave-efeito.png) center top no-repeat; }
+a#made_by:hover { background-position: center -110px; }
+
+a#license {
+	display: block;
+	height: 26px;
+	margin: 0 0 0 0;
+	background: url(imagens/license.png) center 0 no-repeat; }
+a#license:hover { background-position: center -26px; }
+
+
+/* up and down triangles (not enabled for now) */	
+.up_down {
+	position: absolute;
+	margin: -6px 0 0 0;
+	width: 11px;	
+	line-height: 7px;
+	left: 332px; }
+.up_down button {
+	float: left;
+	width: 11px;
+	height: 8px;
+	border: none; }
+.increase { background: url(imagens/up-down.png) 0 0 no-repeat; }
+.increase:hover { background-position: -11px 0 !important; }
+.decrease { background: url(imagens/up-down.png) 0 -8px no-repeat; }
+.decrease:hover { background-position: -11px -8px !important; }
+
+
+/* version 1.1 HTML */
+#info_container { padding-left: 30px; }
+#info_container * { text-align: left; }
+
+#random span, .turn span {
+	display: none;
+}
+#random:hover span {
+	display: block;
+	margin: -3ex 0 0 -16ex;
+	color: #eee;
+	text-shadow: 0 1px 0 #777;
+}
+	.turn:hover span {
+		display: block;
+		position: absolute;
+		margin: -20px 0 0 -7ex;
+		color: #999;
+		text-shadow: 0 1px 0 #333;
+	}
+		.turn:hover span.voltar { margin-left: -6ex !important; }
+
+strong em {
+	font-weight: bolder;
+	color: #ccc;
+	font-style: normal;
+}
+
+p {
+	color: #777;
+	text-shadow: 0 1px 0 #333;
+	word-spacing: 0.5ex;
+}
+
+#versao {
+	margin: 20px 0 20px 0 !important;
+	text-align: left !important;
+}
+
+.stats { padding-top: 0 !important; }
+
+abbr {
+	text-decoration: none;
+	border: none;
+}
+
+#criado_por {
+	display: block;
+	width: 194px;
+	height: 60px;
+	margin: 10px 0 20px 0;
+	background: url(imagens/criado_por.png) 0 0 no-repeat;
+}
+#criado_por:hover{
+	background-position: 0 -60px;
+}
+
+#license {
+	margin: 5px 0 0 0 !important;
+	width: 200px;
+	height: 26px;
+}
+ul {
+	color: #777;
+	text-shadow: 0 1px 0 #333;
+	padding: 0 20px 20px 22px;
+	margin: 0;
+}
+
+body { margin: 20px; }
+
+#topo_logo {
+	display: block;
+	height: 26px;
+	width: 274px;
+	background: url(imagens/color8.png) center center no-repeat;
+}
+
+.icone {
+	float: right;
+	top: 10px;
+	left: 300px;
+	position: absolute;
+	z-index: 101;
+	background:  url(imagens/color8_64.png) center center no-repeat;
+	width: 64px;
+	height: 64px;
+}
