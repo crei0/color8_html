@@ -1,0 +1,145 @@
+<!--
+    color8
+        
+        05/10/2016 | 1.2 | English Version 
+        
+        Changelog:
+            * 29-05-2011 | 1.1 | Portuguese Version
+        
+        Created by:
+            André Guedes
+            http://andreguedes.pt/
+            guedes.andre@gmail.com
+        
+        License
+            CreativeCommons: BY-NC-SA 3.0 
+            http://creativecommons.org/licenses/by-nc-sa/3.0/deed
+-->
+<html>
+<head>
+	<title>Color8</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="pt" />
+    <meta name="author" content="André Guedes" />
+	<meta name="copyright" content="André Guedes (c) 2011" />
+	<meta name="email" content="guedes.andre@gmail.com" />
+	<meta name="homepage" content="http://andreguedes.pt" />
+	<link href="color8.css" rel="stylesheet" type="text/css" media="all" />
+	
+    
+	<!--<script type="text/javascript" src="javascripts/mootools.js"></script>-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.1.2/mootools-yui-compressed.js"></script>
+    <script type="text/javascript" src="color8.js"></script>
+    
+    <link  href="http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="color_container" class="container">
+	<div class="top">
+        <button type="button" onClick="show_rgb();" id="show_rgb">&nbsp;</button>
+        <button type="button" onClick="show_hsb();" id="show_hsb">&nbsp;</button>
+	</div>
+    <div class="icone">&nbsp;</div>
+    <div id="rgb_sliders" style="display: block;">
+        <div class="slider_box">
+            <div id="slider_red" class="slider">
+              <div id="knob_red" class="knob"></div>
+          </div>
+            <div id="stats_red" class="stats">0</div>
+        </div>
+        
+        <div class="slider_box">
+            <div id="slider_green" class="slider">
+              <div id="knob_green" class="knob"></div>
+          </div>
+            <div id="stats_green" class="stats">0</div>
+        </div>
+        
+        <div class="slider_box">
+        	<div id="slider_blue" class="slider">
+              <div id="knob_blue" class="knob"></div>
+          	</div>
+            <div id="stats_blue" class="stats">0</div>
+        </div>
+    </div>
+    
+    <div id="hsb_sliders">
+		<div class="slider_box">
+            <div id="slider_hue" class="slider">
+              <div id="knob_hue" class="knob"></div>
+			</div>
+            <div id="stats_hue" class="stats">0</div>
+        </div>
+        
+        <div class="slider_box">
+            <div id="slider_saturation" class="slider">
+              <div id="knob_saturation" class="knob"></div>
+              </div>
+			<div id="stats_saturation" class="stats">0</div>
+        </div>
+        
+        <div class="slider_box">
+            <div id="slider_brightness" class="slider">
+              <div id="knob_brightness" class="knob"></div>
+			</div>
+            <div id="stats_brightness" class="stats">0</div>
+        </div>
+    </div>
+    
+    <div class="boxes" id="color">
+        <button type="button" id="random" onClick="random_color();">
+        	&nbsp;
+            <span>Cor aleatória</span>
+        </button>
+    </div>
+    <div class="boxes" id="color_stats" style="width: 100px; padding: 0 0 5px 8px;">
+        <strong><abbr title="Red Green Blue"><em>RGB</em></abbr></strong>
+        <div class="input_box">
+            <input name="color_rgb" id="color_rgb" type="text" value="0,0,0" readonly="true" />
+            <button type="button" class="copy" onClick="copyTextToClipboard(color_rgb);">&nbsp;</button>
+        </div>
+        <strong><abbr title="Hexadecimal"><em>Hex</em></abbr></strong>
+        <div class="input_box">
+            <input name="color_hex" id="color_hex" type="text" value="#000000" readonly="true" />
+            <button type="button" class="copy" onClick="copyTextToClipboard(color_hex);">&nbsp;</button>
+        </div>
+        <strong><abbr title="Hue Saturation Brightness"><em>HSB</em></abbr></strong>
+        <div class="input_box">
+            <input name="color_hsb" id="color_hsb" type="text" value="0,0,0" readonly="true" />
+        </div>
+    </div>
+    <button type="button" class="turn" onClick="show_info();">
+        <img src="imagens/info.png" alt="Acerca o color8" />
+        <span>About</span>
+    </button>
+</div>
+<div id="info_container" class="container" style="display: none;">
+    <div class="icone">&nbsp;</div>
+    <div id="topo_logo">&nbsp;</div>
+    <p id="versao">
+    	<strong>English version 1.2</strong>
+    </p>
+    
+    <p>
+    	<strong><em>color8</em> was made by</strong>
+        <a id="criado_por" title="Open website" href="http://andreguedes.pt" target="_blank">&nbsp;</a>
+    </p>
+    
+    <p>
+		<strong>Lincese</strong>
+		<a id="license" title="Open Creative Commons license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed" target="_blank">
+			&nbsp;
+		</a>
+    </p>
+    <ul>
+    	<li>Attribution</li>
+        <li>NonCommercial</li>
+        <li>ShareAlike</li>
+    </ul>
+    
+    <button type="button" class="turn" onClick="hide_info();">
+    	<img src="imagens/back.png" alt="Go back" />
+        <span class="voltar">Back</span>
+    </button>
+</div>
+</body></html>
